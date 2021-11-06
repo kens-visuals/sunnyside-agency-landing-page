@@ -1,0 +1,62 @@
+$color-primary: hsl(213, 9%, 39%);
+$color-primary--dark: hsl(211, 28%, 19%);
+$color-primary--light: hsl(232, 10%, 55%);
+$color-secondary: hsl(0, 0%, 100%);
+$color-secondary--dark: hsl(210, 4%, 67%);
+$color-red: hsl(7, 99%, 70%);
+$color-blue: hsl(198, 62%, 26%); // photography text
+$color-cyan: hsl(168, 34%, 41%); // (footer)
+$color-green: hsl(167, 40%, 24%); // graphic design text
+$color-yellow: hsl(51, 100%, 49%);
+
+$font-primary: 'Barlow', sans-serif;
+$font-secondary: 'Fraunces', serif;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: $font-primary;
+  font-size: 1.6rem;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
