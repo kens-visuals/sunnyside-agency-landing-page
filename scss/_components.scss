@@ -1,61 +1,105 @@
 .content {
   min-height: 66vh;
-  padding: 3rem 3.5rem;
   background: {
     image: url('../images/mobile/image-header.jpg');
     repeat: no-repeat;
     position: bottom;
     size: cover;
   }
+  padding: 3rem 2rem;
 
   @media (min-width: 810px) {
-    padding: 5rem 6.5rem;
-    min-height: 80vh;
-    background: {
-      image: url('../images/desktop/image-header.jpg');
-      repeat: no-repeat;
-      position: bottom;
-      size: cover;
-    }
+    min-height: 85vh;
+    background-image: url('../images/desktop/image-header.jpg');
+    padding: 4.5rem 4rem;
   }
 
   &__nav {
+    position: relative;
+
     @include flex(center, space-between, row);
   }
 
   &__list {
-    // width: 50%;
-    display: none;
+    width: 100%;
+    background-color: $color-secondary;
+    text-align: center;
+    padding: 4rem 5rem;
+    position: absolute;
+    top: 8rem;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -3rem;
+      right: 0;
+      border-top: 15px solid transparent;
+      border-left: 15px solid transparent;
+      border-bottom: 15px solid $color-secondary;
+      border-right: 15px solid $color-secondary;
+    }
+
+    &--is-hidden {
+      display: none;
+      transition: all 1s;
+    }
 
     @media (min-width: 810px) {
+      all: unset;
+      list-style: none;
+
+      &::before {
+        all: revert;
+      }
+
       @include flex(center, space-between, row);
     }
 
     &-item {
       &:not(:last-child) {
-        margin-right: 6rem;
+        margin-bottom: 2rem;
+      }
+
+      @media (min-width: 810px) {
+        &:not(:last-child) {
+          margin-bottom: 0;
+          margin-right: 5rem;
+        }
       }
     }
 
     &-link {
-      color: $color-secondary;
+      color: $color-secondary--dark;
       text-decoration: none;
-      font-size: 1.8rem;
+      font-size: 2rem;
       transition: all 0.2s;
 
       &--contact {
         color: $color-primary--dark;
-        background-color: $color-secondary;
+        background-color: $color-yellow;
         border-radius: 5rem;
         font-size: 1.6rem;
         font-family: $font-secondary;
         text-transform: uppercase;
-        padding: 2rem 3rem;
+        padding: 1.5rem 3rem;
+        display: inline-block;
+      }
 
-        &:hover,
-        &:active {
-          color: $color-secondary;
-          background-color: rgba($color-secondary, 0.5);
+      @media (min-width: 810px) {
+        color: $color-secondary;
+
+        &--contact {
+          color: $color-primary--dark;
+          background-color: $color-secondary;
+
+          &:hover,
+          &:active {
+            color: $color-secondary;
+            background-color: rgba($color-secondary, 0.5);
+          }
         }
       }
     }
@@ -65,6 +109,10 @@
     &--white {
       filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(139deg)
         brightness(102%) contrast(104%);
+
+      @media (min-width: 810px) {
+        width: 17rem;
+      }
     }
 
     &--green {
@@ -86,12 +134,18 @@
 
   &__heading {
     color: $color-secondary;
+    font-family: $font-secondary;
     text-transform: uppercase;
     letter-spacing: 0.8rem;
     line-height: 1.3;
-    margin: 9rem 0 5rem 0;
+    margin: 9rem 0 4rem 0;
+    text-align: center;
 
-    @include heading-font(3.8rem);
+    @include heading-font(3.8rem, 5vw, 5.8rem);
+
+    @media (min-width: 810px) {
+      margin: 12rem 0 7rem 0;
+    }
   }
 
   &__arrow {
@@ -101,8 +155,17 @@
     display: grid;
     grid-template-rows: 31.5rem 1fr;
 
+    @media (min-width: 810px) {
+      grid-template-rows: 70rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     &--images {
-      grid-template-rows: repeat(2, 60rem);
+      grid-template-rows: repeat(2, 70rem);
+
+      @media (min-width: 810px) {
+        grid-template-rows: 70rem;
+      }
     }
   }
 
@@ -117,28 +180,61 @@
 
     &--pink {
       background-image: url('../images/mobile/image-transform.jpg');
+
+      @media (min-width: 810px) {
+        background-image: url('../images/desktop/image-transform.jpg');
+        grid-row: 1 / 2;
+        grid-column: 2 / -1;
+      }
     }
 
     &--yellow {
       background-image: url('../images/mobile/image-stand-out.jpg');
+
+      @media (min-width: 810px) {
+        background-image: url('../images/desktop/image-stand-out.jpg');
+      }
     }
 
     &--green {
       background-image: url('../images/mobile/image-graphic-design.jpg');
+
+      @media (min-width: 810px) {
+        background-image: url('../images/desktop/image-graphic-design.jpg');
+      }
     }
 
     &--blue {
       background-image: url('../images/mobile/image-photography.jpg');
+
+      @media (min-width: 810px) {
+        background-image: url('../images/desktop/image-photography.jpg');
+      }
     }
   }
 
   &__wrapper {
+    text-align: center;
     padding: 6.5rem 2rem;
+    align-self: center;
 
-    @include flex(center, flex-start, column);
+    // @include flex(center, flex-start, column);
+
+    @media (min-width: 1140px) {
+      text-align: left;
+      padding: 6.5rem 20rem;
+      // text-align: left;
+      // display: unset;
+    }
 
     &--images {
-      padding: 0 2rem;
+      padding: 0;
+      width: 90%;
+      text-align: center;
+
+      @media (min-width: 810px) {
+        width: 40%;
+      }
     }
   }
 
@@ -146,7 +242,7 @@
     line-height: 1.2;
     margin-bottom: 2.5rem;
 
-    @include heading-font(3.2rem);
+    @include heading-font(3.2rem, 5vw, 4rem);
 
     &--green {
       @include cfp($color-green, 2.8rem, 0);
@@ -180,7 +276,7 @@
     letter-spacing: 0.1rem;
     position: relative;
 
-    @include heading-font(1.5rem);
+    @include heading-font(1.5rem, 2vw, 1.6rem);
 
     &:link,
     &:visited {
@@ -194,7 +290,7 @@
       border-radius: 5rem;
       opacity: 0.25;
       position: absolute;
-      bottom: 0.1rem;
+      bottom: 0;
       left: 50%;
       transform: translateX(-50%);
       z-index: -1;
@@ -227,17 +323,40 @@
     & > *:not(:last-child) {
       margin-bottom: 6rem;
     }
+
+    @media (min-width: 1140px) {
+      padding: 20rem 20rem;
+    }
+
+    &-wrapper {
+      text-align: center;
+
+      @media (min-width: 810px) {
+        padding: 0 20rem;
+      }
+
+      @media (min-width: 1140px) {
+        padding: 0 5rem;
+
+        @include flex(center, center, row);
+      }
+    }
   }
 
   &__review {
     @include flex(center, center, column);
 
+    @media (min-width: 1140px) {
+      padding: 0 2rem;
+    }
+
     &-heading {
       color: $color-secondary--dark;
       text-transform: uppercase;
+      text-align: center;
       letter-spacing: 0.3rem;
 
-      @include heading-font(1.8rem);
+      @include heading-font(1.8rem, 2vw, 2.2rem);
     }
 
     &-img {
@@ -249,11 +368,16 @@
       color: $color-primary;
       font-size: 1.8rem;
       margin: 3.5rem 0;
+
+      @media (min-width: 1140px) {
+        margin: 6rem 0;
+      }
     }
 
     &-name {
-      @include heading-font(1.8rem);
       margin-bottom: 0.5rem;
+
+      @include heading-font(1.8rem, 5vw, 2rem);
     }
 
     &-status {
@@ -273,20 +397,45 @@
     grid-template-rows: repeat(2, 19rem);
     grid-template-columns: repeat(2, 50%);
 
+    @media (min-width: 810px) {
+      grid-template-rows: repeat(2, 30rem);
+    }
+
+    @media (min-width: 1140px) {
+      grid-template-rows: 54rem;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
     &--1 {
       background-image: url('../images/mobile/image-gallery-milkbottles.jpg');
+
+      @media (min-width: 810px) {
+        background-image: url('../images/desktop/image-gallery-milkbottles.jpg');
+      }
     }
 
     &--2 {
       background-image: url('../images/mobile/image-gallery-orange.jpg');
+
+      @media (min-width: 810px) {
+        background-image: url('../images/desktop/image-gallery-orange.jpg');
+      }
     }
 
     &--3 {
       background-image: url('../images/mobile/image-gallery-cone.jpg');
+
+      @media (min-width: 810px) {
+        background-image: url('../images/desktop/image-gallery-cone.jpg');
+      }
     }
 
     &--4 {
-      background-image: url('../images/mobile//image-gallery-sugar-cubes.jpg');
+      background-image: url('../images/mobile/image-gallery-sugar-cubes.jpg');
+
+      @media (min-width: 810px) {
+        background-image: url('../images/desktop/image-gallery-sugarcubes.jpg');
+      }
     }
   }
 
@@ -297,12 +446,12 @@
     @include flex(center, center, column);
 
     &-nav {
-      width: 95%;
+      width: 100%;
+      max-width: 35rem;
       margin-bottom: 4rem;
     }
 
     &-list {
-      list-style: none;
       margin-block: 4rem;
 
       @include flex(flex-start, space-around, row);
@@ -327,7 +476,8 @@
   }
 
   &__icons {
-    width: 60%;
+    width: 100%;
+    max-width: 22rem;
 
     &-list {
       @include flex(flex-start, space-evenly, row);

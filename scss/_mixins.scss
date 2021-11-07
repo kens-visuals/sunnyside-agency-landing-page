@@ -1,7 +1,7 @@
-@mixin heading-font($size) {
+@mixin heading-font($min-size, $normal, $max-size) {
   font: {
     family: $font-secondary;
-    size: $size;
+    size: clamp($min-size, $normal, $max-size);
     weight: 900;
   }
 }
