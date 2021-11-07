@@ -1,0 +1,20 @@
+@mixin heading-font($size) {
+  font: {
+    family: $font-secondary;
+    size: $size;
+    weight: 900;
+  }
+}
+
+@mixin flex($ai: flex-start, $jc: flex-start, $fd: row) {
+  display: flex;
+  align-items: $ai;
+  justify-content: $jc;
+  flex-direction: $fd;
+}
+
+@mixin cfp($color, $fsz, $padding) {
+  color: $color;
+  font-size: $fsz;
+  padding-bottom: $padding;
+}
