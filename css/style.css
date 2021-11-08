@@ -439,7 +439,7 @@ body {
   0% {
     transform: translateY(0); }
   100% {
-    transform: translateY(13.9rem); } }
+    transform: translateY(12.9rem); } }
 
 @keyframes arrow {
   0% {
