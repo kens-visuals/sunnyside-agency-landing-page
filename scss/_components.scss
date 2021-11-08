@@ -262,6 +262,10 @@
       text-align: center;
 
       @media (min-width: 810px) {
+        width: 80%;
+      }
+
+      @media (min-width: 1140px) {
         width: 40%;
       }
     }

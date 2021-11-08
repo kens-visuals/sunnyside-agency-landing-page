@@ -237,6 +237,9 @@ body {
       text-align: center; }
       @media (min-width: 810px) {
         .content__wrapper--images {
+          width: 80%; } }
+      @media (min-width: 1140px) {
+        .content__wrapper--images {
           width: 40%; } }
   .content__secondary-heading {
     line-height: 1.2;
