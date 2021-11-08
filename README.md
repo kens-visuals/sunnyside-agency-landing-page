@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [TO_BE_UPDATED](TO_BE_UPDATED)
-- Solution URL: [TO_BE_UPDATED](TO_BE_UPDATED)
+- Live Site URL: [https://kens-visuals.github.io/sunnyside-agency-landing-page/](https://kens-visuals.github.io/sunnyside-agency-landing-page/)
+- Solution URL: [https://www.frontendmentor.io/solutions/sunnyside-agency-landing-page-with-scss-bem-css-grid-and-vanilla-js-uekvq0GuT](https://www.frontendmentor.io/solutions/sunnyside-agency-landing-page-with-scss-bem-css-grid-and-vanilla-js-uekvq0GuT)
 
 ## My process
 
