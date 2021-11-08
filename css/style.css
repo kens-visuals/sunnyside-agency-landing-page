@@ -131,10 +131,10 @@ body {
             transition: all 0.5s; }
           .content__list-link:not(.content__list-link--contact):before {
             top: -0.8rem;
-            right: -5rem; }
+            right: -2rem; }
           .content__list-link:not(.content__list-link--contact):after {
             bottom: -1rem;
-            left: -5rem; }
+            left: -2rem; }
           .content__list-link:hover::after, .content__list-link:hover::before {
             color: #fad400;
             background-color: #fad400;

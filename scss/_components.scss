@@ -103,12 +103,12 @@
 
         &:not(.content__list-link--contact):before {
           top: -0.8rem;
-          right: -5rem;
+          right: -2rem;
         }
 
         &:not(.content__list-link--contact):after {
           bottom: -1rem;
-          left: -5rem;
+          left: -2rem;
         }
 
         &:hover::after,
