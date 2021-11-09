@@ -156,6 +156,9 @@ body {
   .content__btn {
     border: 0;
     background: 0; }
+    @media (min-width: 1140px) {
+      .content__btn {
+        display: none; } }
   .content__header {
     display: flex;
     align-items: center;
