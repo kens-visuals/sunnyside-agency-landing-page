@@ -40,11 +40,7 @@ body {
   font-family: "Barlow", sans-serif;
   font-size: 1.6rem;
   text-rendering: optimizeSpeed;
-  line-height: 1.7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column; }
+  line-height: 1.7; }
 
 .container {
   width: 100%; }
@@ -157,6 +153,9 @@ body {
   @media (min-width: 1140px) {
     .content__logo--hamburger {
       display: none; } }
+  .content__btn {
+    border: 0;
+    background: 0; }
   .content__header {
     display: flex;
     align-items: center;

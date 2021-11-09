@@ -156,6 +156,11 @@
     }
   }
 
+  &__btn {
+    border: 0;
+    background: 0;
+  }
+
   &__header {
     @include flex(center, center, column);
   }
